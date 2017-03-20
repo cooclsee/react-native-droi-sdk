@@ -192,7 +192,7 @@ public class DroiSelfUpdateModule extends ReactContextBaseJavaModule implements 
     }
 
     /**
-     * 下载并安装app
+     * 下载app
      */
     @ReactMethod
     public void downloadApp(Promise promise) {
@@ -217,21 +217,21 @@ public class DroiSelfUpdateModule extends ReactContextBaseJavaModule implements 
         public void onStart(long l) {
             WritableMap map = Arguments.createMap();
             map.putDouble("result", (double) l);
-            sendEvent("downloadOnStart", map);
+            sendEvent("download_onStart", map);
         }
 
         @Override
         public void onProgress(float v) {
             WritableMap map = Arguments.createMap();
             map.putDouble("result", v);
-            sendEvent("downloadOnProgress", map);
+            sendEvent("download_onProgress", map);
         }
 
         @Override
         public void onFinished(File file) {
             WritableMap map = Arguments.createMap();
             map.putString("fileName", file.getAbsolutePath());
-            sendEvent("downloadOnFinished", map);
+            sendEvent("download_onFinished", map);
         }
 
         @Override
@@ -253,12 +253,12 @@ public class DroiSelfUpdateModule extends ReactContextBaseJavaModule implements 
                     break;
             }
             map.putString("code", failCode);
-            sendEvent("downloadOnFailed", map);
+            sendEvent("download_onFailed", map);
         }
 
         @Override
         public void onPatching() {
-            sendEvent("downloadOnStart", null);
+            sendEvent("download_onStart", null);
         }
     }
 }
