@@ -1,0 +1,24 @@
+{
+  "name": "react-native-droi-sdk",
+  "version": "0.0.5",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": "",
+  "license": "",
+  "peerDependencies": {
+    "react-native": "^0.41.2"
+  },
+  "standard": {
+    "extends": [
+      "standard",
+      "standard-jsx"
+    ],
+    "parser": "babel-eslint"
+  }
+}

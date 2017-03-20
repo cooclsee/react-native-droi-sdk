@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cooclsee.droi.sdk">
+
+    <application>
+        <activity
+            android:name="com.droi.sdk.selfupdate.DroiUpdateDialogActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
+        <receiver android:name="com.droi.sdk.selfupdate.NotificationClickReceiver" />
+    </application>
+
+</manifest>
+  
