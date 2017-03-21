@@ -13,7 +13,12 @@ import com.facebook.react.bridge.WritableMap;
 
 public class MapUtil {
     public static WritableMap onUpdateReturnedToMap(int updateStatus, DroiUpdateResponse response){
-        WritableMap map = droiUpdateResponseToMap(response);
+        WritableMap map;
+        if (response != null) {
+            map = droiUpdateResponseToMap(response);
+        } else {
+            map = Arguments.createMap();
+        }
         String statusStr = null;
         switch (updateStatus) {
             case UpdateStatus.NO:
