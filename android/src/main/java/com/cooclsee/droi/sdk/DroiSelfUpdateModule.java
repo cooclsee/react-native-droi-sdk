@@ -72,7 +72,7 @@ public class DroiSelfUpdateModule extends ReactContextBaseJavaModule implements 
     @ReactMethod
     public void init(ReadableMap options) {
         this.mDroiUpdateResponse = null;
-        DroiUpdate.initialize(reactContext);
+        DroiUpdate.initialize(super.getCurrentActivity().getApplication());
         if (options.hasKey("onlyWifi")) {
             DroiUpdate.setUpdateOnlyWifi(options.getBoolean("onlyWifi"));
         }
